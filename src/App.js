@@ -38,12 +38,25 @@ class App extends React.Component {
     })
   }
 
+  handleAddToDo = toDo => {
+    const newToDo = {
+      task: toDo,
+      id: Date.now,
+      completed: false
+    }
+
+    this.setState({
+      ...this.state,
+      toDos: [ ...this.state, newToDo ]
+    });
+  }
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList toDos={this.state.toDos} handleToggleTodo={this.handleToggleTodo} />
-        {/* <TodoForm /> */}
+        <TodoForm handleAddToDo={this.handleAddToDo}/>
         <button onClick={this.handleToggle} id="clearBtn">Clear Completed</button>
       </div>
     );
