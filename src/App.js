@@ -41,7 +41,7 @@ class App extends React.Component {
   handleAddToDo = toDo => {
     const newToDo = {
       task: toDo,
-      id: Date.now,
+      id: Date().valueOf(),
       completed: false
     }
 
