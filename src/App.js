@@ -47,7 +47,7 @@ class App extends React.Component {
 
     this.setState({
       ...this.state,
-      toDos: [ ...this.state, newToDo ]
+      toDos: [ ...this.state.toDos, newToDo ]
     });
   }
 
